@@ -25,6 +25,7 @@
             padding: 14px 16px;
             text-decoration: none;
             font-size: 18px;
+            text-decoratoion: none;
         }
 
         .navbar a:hover {
