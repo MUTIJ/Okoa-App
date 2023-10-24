@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Font Size Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            background: url('06.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333333;
+        }
+
+        .button-container {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .font-button {
+            padding: 10px;
+            background-color: maroon;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="button-container">
+        <button id="increaseFontSize" class="font-button">+</button>
+        <button id="decreaseFontSize" class="font-button">-</button>
+    </div>
+
+    <h1>Font Size Changer</h1>
+
+    <script>
+        const increaseFontSize = document.getElementById('increaseFontSize');
+        const decreaseFontSize = document.getElementById('decreaseFontSize');
+        const body = document.body;
+
+        increaseFontSize.addEventListener('click', () => {
+            changeFontSize(2);
+        });
+
+        decreaseFontSize.addEventListener('click', () => {
+            changeFontSize(-2);
+        });
+
+        function changeFontSize(value) {
+            const currentSize = parseInt(getComputedStyle(body).fontSize, 10);
+            const newSize = currentSize + value + 'px';
+            body.style.fontSize = newSize;
+        }
+    </script>
+</body>
+</html>
